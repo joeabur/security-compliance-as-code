@@ -1,0 +1,33 @@
+- control_id: ISO-A.5.17
+  framework: ISO 27001
+  requirement: Authentication information is managed securely
+  description: Authentication mechanisms are protected and reviewed.
+  severity: HIGH
+  check: password_policy
+  recommendation: Enforce a strong password policy and MFA for privileged access.
+  owner: Identity Engineering
+  remediation: Configure password length, complexity, and MFA requirements.
+  references: ["ISO/IEC 27001:2022 Annex A 5.17"]
+  mappings: [CIS-AWS-1.4, NIST-PR.AC-7, PCI-8.4]
+- control_id: ISO-A.8.13
+  framework: ISO 27001
+  requirement: Information backup is maintained and tested
+  description: Backups support restoration and continuity objectives.
+  severity: HIGH
+  check: backup
+  recommendation: Maintain protected backups and test restoration regularly.
+  owner: Infrastructure Operations
+  remediation: Define backup policies, retention, and restore exercises.
+  references: ["ISO/IEC 27001:2022 Annex A 8.13"]
+  mappings: [NIST-PR.IP-4, PCI-12.10]
+- control_id: ISO-A.8.15
+  framework: ISO 27001
+  requirement: Logging is implemented
+  description: Event logs are generated, protected, and reviewed.
+  severity: HIGH
+  check: logging
+  recommendation: Centralize security logs with retention and review procedures.
+  owner: Security Operations
+  remediation: Route service logs to a protected central logging account.
+  references: ["ISO/IEC 27001:2022 Annex A 8.15"]
+  mappings: [CIS-AWS-3.1, NIST-DE.CM-1, PCI-10.2]

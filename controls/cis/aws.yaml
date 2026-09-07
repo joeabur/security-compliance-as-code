@@ -1,0 +1,55 @@
+- control_id: CIS-AWS-1.4
+  framework: CIS
+  requirement: Ensure MFA is enabled for the root user
+  description: Protect the highest privilege AWS identity with MFA.
+  severity: HIGH
+  check: mfa
+  recommendation: Enable hardware or virtual MFA for the AWS root account.
+  owner: Cloud Platform
+  remediation: Enable root MFA and record evidence in the account baseline.
+  references: ["CIS AWS Foundations 1.4"]
+  mappings: [NIST-PR.AC-7, PCI-8.4, ISO-A.5.17]
+- control_id: CIS-AWS-1.7
+  framework: CIS
+  requirement: Eliminate root account activity
+  description: The root identity should not be used for routine operations.
+  severity: HIGH
+  check: root_activity
+  recommendation: Use delegated IAM roles and investigate root activity.
+  owner: Cloud Platform
+  remediation: Remove root access keys and review CloudTrail events.
+  references: ["CIS AWS Foundations 1.7"]
+  mappings: [NIST-PR.AC-4, PCI-7.2, ISO-A.5.18]
+- control_id: CIS-AWS-1.16
+  framework: CIS
+  requirement: Ensure IAM policies do not grant full administrative privilege
+  description: Avoid wildcard IAM permissions where narrower permissions are possible.
+  severity: HIGH
+  check: iam_wildcards
+  recommendation: Replace wildcard actions and resources with least-privilege grants.
+  owner: Cloud Platform
+  remediation: Refactor policy documents and review with service owners.
+  references: ["CIS AWS Foundations 1.16"]
+  mappings: [NIST-PR.AC-4, PCI-7.2, ISO-A.5.15]
+- control_id: CIS-AWS-2.1.1
+  framework: CIS
+  requirement: S3 buckets should block public access
+  description: Object storage must not be unintentionally public.
+  severity: CRITICAL
+  check: s3_public_access
+  recommendation: Enable all S3 Block Public Access settings.
+  owner: Cloud Platform
+  remediation: Remove public bucket policies and add preventive guardrails.
+  references: ["CIS AWS Foundations 2.1.1"]
+  mappings: [NIST-PR.DS-5, PCI-7.2, ISO-A.5.23]
+- control_id: CIS-AWS-3.1
+  framework: CIS
+  requirement: CloudTrail should be enabled
+  description: API activity must be recorded for investigation and accountability.
+  severity: HIGH
+  check: cloudtrail
+  recommendation: Enable organization-wide CloudTrail with protected retention.
+  owner: Security Engineering
+  remediation: Deploy a multi-region trail to a restricted log archive.
+  references: ["CIS AWS Foundations 3.1"]
+  mappings: [NIST-DE.CM-1, PCI-10.2, ISO-A.8.15]

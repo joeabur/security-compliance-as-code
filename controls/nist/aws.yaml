@@ -1,0 +1,33 @@
+- control_id: NIST-PR.DS-1
+  framework: NIST CSF
+  requirement: Data-at-rest protections are implemented
+  description: Stored data is protected with encryption appropriate to risk.
+  severity: HIGH
+  check: encryption
+  recommendation: Encrypt storage and managed data services with approved keys.
+  owner: Data Platform
+  remediation: Encrypt unencrypted resources and validate key policies.
+  references: ["NIST CSF PR.DS-1"]
+  mappings: [CIS-AWS-2.1.1, PCI-3.5, ISO-A.8.24]
+- control_id: NIST-DE.CM-1
+  framework: NIST CSF
+  requirement: Networks and systems are monitored
+  description: Monitoring supports timely detection of anomalous behavior.
+  severity: HIGH
+  check: monitoring
+  recommendation: Enable actionable security alerts with an on-call owner.
+  owner: Security Operations
+  remediation: Configure alert rules, routing, and response runbooks.
+  references: ["NIST CSF DE.CM-1"]
+  mappings: [CIS-AWS-3.1, PCI-10.6, ISO-A.8.16]
+- control_id: NIST-PR.AC-7
+  framework: NIST CSF
+  requirement: Users, devices, and other assets are authenticated
+  description: Authentication controls reduce unauthorized access risk.
+  severity: HIGH
+  check: mfa
+  recommendation: Require MFA for privileged identities.
+  owner: Identity Engineering
+  remediation: Enforce MFA through identity policies and verify enrollment.
+  references: ["NIST CSF PR.AC-7"]
+  mappings: [CIS-AWS-1.4, PCI-8.4, ISO-A.5.17]

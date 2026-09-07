@@ -1,0 +1,33 @@
+- control_id: PCI-8.4
+  framework: PCI DSS
+  requirement: Strong authentication is implemented
+  description: Multi-factor authentication protects access to the cardholder data environment.
+  severity: CRITICAL
+  check: mfa
+  recommendation: Enforce MFA for all administrative access.
+  owner: Identity Engineering
+  remediation: Require MFA in identity and access policies.
+  references: ["PCI DSS v4.0 Requirement 8.4"]
+  mappings: [CIS-AWS-1.4, NIST-PR.AC-7, ISO-A.5.17]
+- control_id: PCI-10.2
+  framework: PCI DSS
+  requirement: Audit logs capture relevant security events
+  description: Logs support reconstruction of access and security events.
+  severity: HIGH
+  check: cloudtrail
+  recommendation: Centralize and protect audit logs.
+  owner: Security Operations
+  remediation: Enable CloudTrail and immutable retention.
+  references: ["PCI DSS v4.0 Requirement 10.2"]
+  mappings: [CIS-AWS-3.1, NIST-DE.CM-1, ISO-A.8.15]
+- control_id: PCI-6.3
+  framework: PCI DSS
+  requirement: Vulnerabilities are identified and addressed
+  description: Systems are scanned on a risk-based schedule.
+  severity: HIGH
+  check: vulnerability_management
+  recommendation: Run authenticated vulnerability scans and track remediation.
+  owner: Application Security
+  remediation: Integrate scanning into CI/CD and vulnerability management.
+  references: ["PCI DSS v4.0 Requirement 6.3"]
+  mappings: [NIST-ID.RA-1, ISO-A.8.8]
