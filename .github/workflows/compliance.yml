@@ -22,7 +22,7 @@ jobs:
       - name: Unit tests
         run: pytest --cov=src --cov-report=term-missing
       - name: IaC validation
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
       - run: terraform -chdir=terraform fmt -check
       - run: terraform -chdir=terraform init -backend=false
       - run: terraform -chdir=terraform validate
